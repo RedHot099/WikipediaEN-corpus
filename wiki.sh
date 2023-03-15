@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Download the latest Wikipedia dump file
-#wget https://dumps.wikimedia.org/enwiki/latest/enwiki-latest-pages-articles.xml.bz2
+wget https://dumps.wikimedia.org/enwiki/latest/enwiki-latest-pages-articles.xml.bz2
 
 # Extract the text from the dump file using native Bash commands
 bzcat enwiki-latest-pages-articles.xml.bz2 | \
@@ -14,4 +14,4 @@ bzcat enwiki-latest-pages-articles.xml.bz2 | \
 	enwiki-latest-corpus.txt
 
 # Clean up
-#rm enwiki-latest-pages-articles.xml.bz2
+rm enwiki-latest-pages-articles.xml.bz2
