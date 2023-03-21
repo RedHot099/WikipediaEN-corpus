@@ -2,6 +2,77 @@
 based on Wikipedia EN Latest Articles -- enwiki-latest-pages-articles.xml.bz2
 created with wiki.sh script
 
+---
+
+# Task 2 - advanced analysis
+
+## Zipf law
+![Zipf law for words](figures/zipf-words.png)
+
+## Zipf law for bigrams
+![Zipf law for bigrams](figures/zipf-bigrams.png)
+
+*For this corpus bigrams Zipf law doest not apply*
+
+## Words that disturb Zpifs law the most 
+
+### Short words with low frequency
+*These are mostly words from another languages and alphabets*
+ - 1  - 'min': {'word': '𝜑', 'count': 1}
+ - 2  - 'min': {'word': '𝘰𝘧', 'count': 1}
+ - 3  - 'min': {'word': '𝘢𝘯𝘥', 'count': 1}
+ - 4  - 'min': {'word': '𝔷𝔴𝔢𝔶', 'count': 1}
+ - 5  - 'min': {'word': '𝔳𝔞𝔱𝔢𝔯', 'count': 1}
+ - 6  - 'min': {'word': '𝕿𝖚𝖗𝖙𝖑𝖊', 'count': 1}
+ - 7  - 'min': {'word': '𝘕𝘢𝘯𝘺𝘢𝘯𝘨', 'count': 1}
+ - 8  - 'min': {'word': '𝘙𝘦𝘱𝘶𝘣𝘭𝘪𝘤', 'count': 1}
+ - 9  - 'min': {'word': '𝔲𝔣𝔤𝔢𝔭𝔬𝔥𝔰𝔱', 'count': 1}
+ - 10  - 'min': {'word': '𝔱𝔯𝔦𝔠𝔨𝔩𝔦𝔰𝔠𝔥', 'count': 1}
+ - 11  - 'min': {'word': '𝔤𝔢𝔰𝔠𝔥𝔪𝔦𝔰𝔷𝔢𝔫', 'count': 1}
+ - 12  - 'min': {'word': '𝔯𝔢𝔠𝔥𝔱𝔰𝔠𝔥𝔞𝔣𝔣𝔢', 'count': 1}
+
+
+### Long words with high frequency
+*Just weird words used multiple times*
+ - 41  - 'max': {'word': 'ConductionsystemoftheheartwithouttheHeart', 'count': 8}
+ - 42  -  'max': {'word': 'RightHumanPosteriorDistalRadiusUlnaCarpals', 'count': 6}
+ - 43  - 'max': {'word': 'ayantheObituariesOfEminentMenByIbnKhallikan', 'count': 15}
+ - 44  - 'max': {'word': 'MujahidinAnHistoricalWorkInTheArabicLanguage', 'count': 18}
+ - 45  - 'max': {'word': 'Pneumonoultramicroscopicsilicovolcanoconiosis', 'count': 12}
+ - 66  - 'max': {'word': 'SyrianGentlemanAndWarriorInThePeriodOfTheCrusadesMemoirsOfUsamaIbn', 'count': 3}
+ - 67  - 'max': {'word': 'GayLiberationAndSocialismDocumentsFromTheDiscussionsOnGayLiberation', 'count': 3}
+ - 70  - 'max': {'word': 'FieldMarshallVonMackensenAndCrownPrinceBorisReviewingBulgarianRegiment', 'count': 2}
+ - 72  - 'max': {'word': 'ExploringSharedHistoryPreservingSharedHeritagePenangsLinksToASiamesePast', 'count': 2}
+ - 76  - 'max': {'word': 'IsuPemilikanWilayahPantaiTimurSabahSatuPenelusurandaripadaSudutSumberSejarah', 'count': 2}
+ - 79  - 'max': {'word': 'Donaudampfschiffahrtselektrizitätenhauptbetriebswerkbauunterbeamtengesellschaft', 'count': 2}
+ - 88  - 'max': {'word': 'AhmadIbnMuhammadThalabiAraisAlMajalisFiQisasAlAnbiyaLivesOfTheProphetsLivesOfTheProphets', 'count': 2}
+ - 94  - 'max': {'word': 'Llanshyfairshypwllshygwynshygyllshygogeryshychwyrnshydrobshywlllshylantyshysilioshygogoshygoch', 'count': 2}
+ - 100  - 'max': {'word': 'Bababadalgharaghtakamminarronnkonnbronntonnerronntuonnthunntrovarrhounawnskawntoohoohoordenenthurnuk', 'count': 2}
+
+
+## Custom metrics
+
+### How complex were sentences - comas ~ dots ratio
+
+22120137 / 24536140 ~= 0.9015328817
+
+*This indicates, that less than 10% of sentences were highly complex*
+
+### Words used in single paragraph - white spaces ~ new lines ratio
+
+500903582 / 60208160 ~= 8.31952981124
+
+*We can see, that on avarage a paragraph has barely over 8 words, which indicates that corpus has a lot of short and simple paragraphs*
+
+
+## Code
+Data for above analysis were gathered using *advanced.sh* script and processed using *advanced.py* script placed in analysis folder
+
+
+---
+
+# Task 1 - corpus extraction & preparation
+
 # Code
  - include only article text in between <text> marks
  - exclude lines without alphabet letters 
